@@ -39,6 +39,17 @@ public class Main {
                 if (capturedPiece != null) {
                     captured.add(capturedPiece);
                 }
+
+                if (chessMath.getPromoted() != null) {
+                    System.out.print("B - Bishop\n" +
+                                    "N - Knight\n" +
+                                    "R - Rook\n" +
+                                    "Q - Queen\n" +
+                                    "Piece for promotion: ");
+                    String type = sc.nextLine();
+
+                    chessMath.replacePromotedPiece(type);
+                }
             }
             catch (ChessException e) {
                 System.out.println(e.getMessage());
